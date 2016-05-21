@@ -6,10 +6,99 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 	<style>
-		.center-video1 {margin-top: 80px; margin-left:-50px; margin-right: 50px; width: 600px; height: 340px; border: 2px solid green;}
-		.mobile-image1 {margin-top: 50px; height: 400px; border: 2px solid green;}
-	</style>
+		.center-video1 {margin-top: 50px; margin-left:-50px; margin-right: 50px; width: 600px; height: 340px; border: 2px solid green;}
+		.mobile-image1 {margin-top: 20px; height: 400px; border: 2px solid green;}
+		.slide::after {content: ""; background: none;}
+		#cover h2 {
+			position: relative;
+			top: -40px;
+			left: -30px;
+			color:#FFF;
+			font-size:70px;
+			}
+		#cover p {
+			margin:10px 0 0;
+			color:#FFF;
+			font-style:italic;
+			font-size:20px;
+			}
+		#cover p a {
+			color:#FFF;
+		}
+		.super-title {
+			padding: 10px; 
+			text-align: center; 
+			font-size: 50px; 
+			font-family: 'Lato', sans-serif;
+		}
+		.no-under {
+			text-decoration: none !important;
+		}
+		.slide
+		{
+			background: #000;
+			color: #fff;
+			padding-top: 50px;
+		}
+		.titles
+		{
+			width: 100%;
+			height: 100%;
+			font-family: "Droid Sans", arial, verdana, sans-serif;
+			font-weight: 700;
+			color: #ff6;
+			background-color: #000;
+			overflow: hidden;
+		}
+		.titles h3 {
+			text-align: center;
+		}
+		.titles li {
+			text-align: left;
+		}
+		.titles ul {
+			list-style-type: disc;
+		}
+		#titles
+		{
+			position: absolute;
+			width: 15em;
+			height: 50em;
+			bottom: 0;
+			left: 50%;
+			margin-left: -7em;
+			font-size: 250%;
+			font-weight: bold;
+			text-align: justify;
+			overflow: hidden;
+			transform-origin: 50% 100%;
+			transform: perspective(300px) rotateX(25deg);
+		}
+		#titles:after
+		{
+			position: absolute;
+			content: ' ';
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 60%;
+			background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+			pointer-events: none;
+		}
+		#titlecontent
+		{
+			position: absolute;
+			top: 100%;
+			animation: scroll 60s linear 0s infinite;
+		}
+		@keyframes scroll {
+			0% { top: 100%; }
+			100% { top: -170%; }
+		}
+		</style>
 </head>
 <body class="shower list">
 	<header class="caption">
@@ -17,168 +106,77 @@
 		<p>team3</p>
 	</header>
 	<section class="slide" id="cover">
-		<h2>PhotoQuest</h2>
-		<p>Presented by <a href="https://github.com/urfu-2015/team3">team3</a></p>
+		<h2><a class="no-under" style="text-decoration: none !important; color: #fff;" href="https://github.com/urfu-2015/team3">#team3</a></h2>
 		<img src="pictures/cover.jpg" alt="" class="cover">
-		<!--
-			To apply styles to the certain slides
-			set slide ID to get needed elements
-			-->
-		<style>
-			#cover h2 {
-				margin:30px 0 0;
-				color:#FFF;
-				text-align:center;
-				font-size:70px;
-				}
-			#cover p {
-				margin:10px 0 0;
-				text-align:center;
-				color:#FFF;
-				font-style:italic;
-				font-size:20px;
-				}
-				#cover p a {
-					color:#FFF;
-					}
-		</style>
 	</section>
-	<section class="slide" style="display: flex;">
-		<video class="center-video1" autoplay loop>
-			<source src="files/video1-cut.mp4">
-		</video>
-		<img class="mobile-image1" src="files/mobile1.png">
+	<section class="slide" style="display: flex; flex-direction: column; padding: 50px 100px; background: #000; color: #fff;">
+		<h1 style="padding: 10px; text-align: center; font-size: 50px; font-family: 'Lato';">PhotoQuest</h1>
+		<div style="display: flex;">
+			<video class="center-video1" autoplay loop>
+				<source src="files/video1-cut.mp4">
+			</video>
+			<img class="mobile-image1" src="files/mobile1.png">
+		</div>
 	</section>
 	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
+		<h1 class="super-title">Список квестов</h1>
 	</section>
 	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+		<h1 class="super-title">Страница квеста</h1>
 	</section>
 	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
+		<h1 class="super-title">Авторизация</h1>
+	</section>
+	<section class="slide">
+		<h1 class="super-title">Профиль</h1>
+	</section>
+	<section class="slide">
+		<h1 class="super-title">Страница квеста</h1>
+	</section>
+	<section class="slide">
+		<h1 class="super-title">Прохождение</h1>
+	</section>
+	<section class="slide">
+		<h1 class="super-title">Создание квеста</h1>
+	</section>
+	<section class="slide">
+		<h1 class="super-title">404</h1>
+	</section>
+	<section class="slide">
+		<h1 class="super-title">Технологии</h1>
+		<ul>
+			<li>Платформа – Node.js</li>
+			<li>Веб-сервер – Express.js</li>
+			<li>Шаблоны – Handlebars</li>
+			<li>Авторизация – Passport.js</li>
+			<li>База данных – MongoDB + mLab</li>
+			<li>Деплой – Surge + Heroku</li>
+			<li>CI – Travis</li>
+			<li>Хранение фоток - Cloudinary</li>
+		</ul>
+	</section>
+	<section class="slide titles">
+		<div id="titles">
+			<div id="titlecontent">
+				<h3>Список фич, которые мы хотели реализовать, но так и не сделали:</h3>
 				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
+					<li>• Лайки к фото</li>
+					<li>• Сложность квеста</li>
+					<li>• Статистика</li>
+					<li>• Сортировка фото</li>
+					<li>• Progress bar при создании квеста</li>
+					<li>• Responsive jpg</li>
+					<li>• Бан пользователей</li>
+					<li>• Проверка геолокации фото при создании квеста (геолокация совпадает с городом проведения)</li>
+					<li>• Улучшить производительность</li>
+					<li>• Mokhov activate</li>
 				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
-	</section>
+			</div>
+		</div>
+ </section>
 	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
+		<h1 class="super-title">Вопросы?</h1>
 	</section>
-	<section class="slide">
-		<h2>Code samples</h2>
-		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
-		</pre>
-	</section>
-	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
-	</section>
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<img src="pictures/picture.jpg" alt="" class="cover">
-		<style>
-			#picture h2 {
-				color:#FFF;
-				}
-		</style>
-	</section>
-	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
-	</section>
-	<section class="slide">
-		<h2>Inner navigation</h2>
-		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
-		</ol>
-	</section>
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
-	</section>
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
-		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
-	</section>
-	<p class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</p>
-	<!--
-		To hide progress bar from entire presentation
-		just remove “progress” element.
-		-->
 	<div class="progress"></div>
 	<script src="node_modules/shower-core/shower.min.js"></script>
-	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
-	<!-- Photos by John Carey, fiftyfootshadows.net -->
-</body>
 </html>
